@@ -9,8 +9,10 @@
 
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <link rel="stylesheet" href="./styles.css">
 
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script src="./scripts.js"></script>
     <py-env>
     - paths:
         - ./utils.py
@@ -19,17 +21,22 @@
 
 <body class="container">
     <py-script src="./todo.py"> </py-script>
-
+    <!-- Rounded switch -->
+    <label class="switch">
+        <input id="color-mode" type="checkbox" onclick="colorToggle()"/>
+        <span class="slider round"></span>
+    </label>
     <main class="max-w-xs mx-auto mt-4">
         <section>
 
-            <div class="text-center w-full mb-8">
-                <h1 class="text-3xl font-bold text-gray-800 uppercase tracking-tight">Anel</h1>
+            <div class="text-center w-full mb-8">    
+                <img src="./favicon.png" alt="logo" width="40em"/>            
+                <h1 class="text-3xl font-bold uppercase tracking-tight">Anel</h1>
                 <h2>To Do List</h2>
             </div>
             <div>
                 <input id="new-task-content" class="border flex-1 mr-3 border-gray-300 p-2 rounded" type="text">
-                <button id="new-task-btn" class="p-2 text-white bg-blue-600 border border-blue-600 rounded"
+                <button id="new-task-btn" class="p-2 bg-blue-600 border border-blue-600 rounded"
                     type="submit" pys-onClick="add_task">
                     Add task
                 </button>
@@ -40,7 +47,7 @@
             </div>
 
             <template id="task-template">
-                <section class="task bg-white my-1">
+                <section class="task my-1">
                     <label for="flex items-center p-2 ">
                         <input class="mr-2" type="checkbox" class="task-check">
                         <p class="m-0 inline"></p>
