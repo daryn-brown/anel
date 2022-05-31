@@ -76,10 +76,6 @@ input:checked+.slider:before {
     color: white; 
 }
 
-.dark-mode-title {
-    color: white;
-}
-
 .dark-mode-input {
-    background-color: #080505;
+    background-color: #080505;    
 }
